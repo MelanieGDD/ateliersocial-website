@@ -479,6 +479,16 @@
             line-height: 1.6;
         }
 
+        .box {
+           flex: 1;
+           background-color: rgba(196, 167, 161, 0.8);
+           padding: 18px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           border: 1px solid #ccc;
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+       }
+
         footer {
             background-color: #013328;
             font-family: 'Open-Sans';
@@ -732,7 +742,9 @@
             <h2>Contactez-nous</h2>
             <p> Afin de mieux comprendre vos attentes et de vous contacter dans les plus brefs délai, merci de bien vouloir compléter le formulaire de contact ci-dessous.
             </p>
-            <p> <a href="https://forms.gle/mUKBfzPaGc9WX6MbA">Formulaire de contact</a></p>
+            <div class="box">
+                <p> <a href="https://forms.gle/mUKBfzPaGc9WX6MbA">Formulaire de contact</a></p>
+            </div>
         </div>
     </section> 
     <footer>

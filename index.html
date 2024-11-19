@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> L'Atelier Social </title>
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+
+    <style>
+            /* Intégration de la police d'écriture */
+            @font-face {
+            font-family: 'Merriweather';
+            src: url('/Users/Pro/Desktop/last-one/Merriweather-Regular.tff')
+                format('tff');
+            font-weight: normal;
+            font-size: normal;
+            font-family: 'Open-Sans';
+            src: url('/Users/Pro/Desktop/last-one/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf')
+                format('tff');
+            font-weight: normal;
+            font-size: normal;
+        }
+
+        body {
+            font-family: 'Merriweather';
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #013328;
+            padding: 8px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section::before {
+            content: "";
+            display: block;
+            height: 45px;
+            margin-top: -45px;
+        }
+
+        /* Style du header */
+        .division-1 {
+            background-image: url('fond.png');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: cover;
+            justify-content: space-between;
+            padding: 60px;
+        }
+
+        .division-1 img {
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: cover;
+            object-fit: cover;
+            border: 1px solid #26221f;
+            margin-top: 30px;
+        }
+
+        .division-1 h1 {
+            font-family:'Merriweather';
+            margin-left: 30px;
+            font-size:400%;
+            color: #cb8b65;
+            text-shadow: 3px 2px 1px #26221f;
+            margin-bottom: 30px;
+            margin-top: 70px;
+
+        }
+
+        /* Deuxième division : Fond Marron clair */
+        .division-2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #cb8b65;
+            color: white;
+        }
+
+        .division-2 .text-content {
+            font-family: 'Open-Sans';
+            width: 50%;
+            text-align: justify;
+            font-size: 16px;
+            padding-left: 90px;
+            padding-right: 10px;
+            line-height: 1.6;
+        }
+
+        .division-2 h2 {
+            font-family: 'Merriweather';
+            text-align: center;
+            margin-top: 10px;
+            font-size: 30px;
+            color: #26221f;
+        }
+
+        .division-2 h3 {
+            font-family: 'Merriweather';
+            margin: 60px 30px 40px;
+            text-align: center;
+            font-size: 25px;
+            color: #a25e39;
+        }
+
+        .division-2 img.big-img {
+            width: 35%;
+            height: 100%;
+            object-fit: cover;
+            margin-left: 0;
+        }
+
+        /* Troisième division : Fond blanc */
+        .division-3 {
+            display: flex;
+            height: 100%;
+            padding: 18px;
+            align-items: center;
+            background-color: white;
+            color: #c4a7a1;
+            margin-bottom: 30px;
+        }
+
+        .division-3 .text-content {
+            font-family:'Open-Sans';
+            text-align: justify;
+            font-size: 16px;
+            margin-left: 150px;
+            margin-right: 150px;
+            line-height: 1.6;
+        }
+
+        .division-3 h2 {
+            font-family: 'Merriweather';
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #26221f;
+        }
+
+        .division-3 h3 {
+            font-family: 'Merriweather';
+            margin: 20px 0;
+            text-align: center;
+            font-size: 30px;
+            color: #a25e39;
+        }
+
+        /* Quatrième division : Fond marron clair */
+        .division-4 {
+           display: flex;
+           height: 100%;
+           background-color: #cb8b65;
+           color: #cb8b65;
+           align-items: center;
+           padding: 18px;
+       }
+
+       .division:nth-child(2) {
+           background-color: #fafafa;
+       }
+
+       .container {
+           display: flex;
+           flex-direction: column;
+           justify-content: space-around;
+           min-height: 100vh;
+       }
+
+       .division-4 h2 {
+            font-family: 'Merriweather';
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #26221f;
+            text-align: center;
+       }
+
+       .content-split {
+           display: flex;
+           justify-content: space-between;
+           gap: 20px;
+       }
+
+       .box1 {
+           flex: 1;
+           background-color: #fff;
+           padding: 30px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+       }
+
+       .box1:hover {
+           transform: translateY(-10px);
+           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+       }
+
+       .division-4 h3 {
+           font-family: 'Merriweather';
+           font-size: 25px;
+           color: #a25e39;
+           margin-bottom: 15px;
+           text-align: center;
+       }
+
+       .division-4 p {
+           font-family: 'Open-Sans';
+           text-align: justify;
+           font-size: 16px;
+           margin-bottom: 20px;
+           line-height: 1.6;
+       }
+
+        /* Cinquième division : Fond avec image personnages avec coeur */
+        .division-5 {
+            display: flex;
+            flex-direction: column;
+            padding: 18px;
+            background-image: url('fond2.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+            align-items: cover;
+            justify-content: center;
+        }
+
+        .container {
+           display: flex;
+           flex-direction: column;
+           justify-content: space-around;
+           min-height: 100vh;
+       }
+
+        .division-5 h2 {
+            font-family: 'Merriweather';
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #013328;
+            text-align:center;
+        }
+
+        .content-split {
+           display: flex;
+           justify-content: space-between;
+           gap: 20px;
+       }
+
+       .box {
+           flex: 1;
+           background-color: rgba(196, 167, 161, 0.8);
+           padding: 18px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           border: 1px solid #ccc;
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+       }
+
+       .box:hover {
+           transform: translateY(-10px);
+           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+       }
+
+        .division-5 h3 {
+            font-family: 'Merriweather';
+            font-size: 25px;
+            margin: 0px;
+            text-align: center;
+            color: #a25e39;
+        }
+
+        .division-5 p {
+            font-family: 'Open-Sans';
+            font-size: 16px;
+            text-align:center;
+            color: #013328;
+            line-height: 1.6;
+        }
+
+        /* Sixième division : Fond marron clair */
+        .division-6 {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            background-color: #cb8b65;
+            color: white;
+        }
+
+        .division-6 .text-content {
+            font-family: 'Open-Sans';
+            text-align: justify;
+            font-size: 16px;
+            margin-left: 130px;
+            margin-right: 130px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .division-6 h2 {
+            font-family: 'Merriweather';
+            text-align: center;
+            font-size: 30px;
+            margin: 30px;
+            color: #26221f;
+        }
+
+        .division-6 h3 {
+            font-family: 'Merriweather';
+            text-align: center;
+            font-size: 20px;
+            color: #a25e39;
+            margin-top: 25px;
+        }
+
+         /* Septième division : Fond image mains */
+         .division-7 {
+            display: flex;
+            flex-direction: column;
+            background-image: url('fondservices.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+            align-items: cover;
+            justify-content: center;
+        }
+
+        .division-7 h2 {
+            font-family: 'Merriweather';
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #26221f;
+            text-align: center;
+        }
+
+        .division-7 h3 {
+            font-family: 'Merriweather';
+            font-size: 20px;
+            margin: 25px;
+            text-align: center;
+            color: #a25e39;
+        }
+
+        .division-7 p {
+            font-family: 'Open-Sans';
+            font-size: 16px;
+            text-align: justify;
+            margin-left: 90px;
+            margin-right: 90px;
+            color: #013328;
+            line-height: 1.6;
+        }
+
+        .division-7 li {
+            font-family: 'Open-Sans';
+            font-size: 16px;
+            text-align: justify;
+            margin-left: 130px;
+            margin-right: 130px;
+            color: #013328;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        /* Huitième Division : Tableau tarifaire */
+        .division-8 {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            background-color: #cb8b65;
+            color: white;
+        }
+
+        .division-8 .text-content {
+            font-family: 'Open-Sans';
+            text-align: justify;
+            font-size: 16px;
+            margin-left: 130px;
+            margin-right: 130px;
+            line-height: 1.6;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .division-8 h2 {
+            font-family: 'Merriweather';
+            text-align: center;
+            font-size: 30px;
+            color: #26221f;
+            margin-top: 0px;
+        }
+
+        .division-8 h3 {
+            font-family: 'Merriweather';
+            text-align: center;
+            font-size: 25px;
+            color: #a25e39;
+            margin-top: 20px;
+        }
+
+        .division-8 table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .division-8 table, th, td {
+            border: 1px solid #013328;
+        }
+
+        .division-8 th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .division-8 th {
+            background-color: #013328;
+        }
+
+        .division-8 tr:nth-child(even){
+            background-color: #a25e39;
+        }
+
+        /* Neuvième Division : Formulaire de contact*/
+        .division-9 {
+            padding: 20px;
+            text-align: center;
+            background-image: url('fondrdv.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+        }
+
+        .division-9 h2 {
+            font-family: 'Merriweather';
+            text-align: center;
+            font-size: 30px;
+            color: #013328;
+            margin-top: 0px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        form input, form textarea {
+            font-family: 'Merriweather';
+            color: #013328;
+            font-size: 15px;
+            margin-bottom: 12px;
+            padding: 13px;
+            border: 1px solid #c4a7a1;
+            border-radius: 10px;
+        }
+
+        form button {
+            font-family: 'Merriweather';
+            padding: 15px;
+            background-color: #013328;
+            font-size: 15px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        form button:hover {
+            background-color: #0a5847;
+        }
+
+        footer {
+            background-color: #013328;
+            font-family: 'Open-Sans';
+            display:flow-root;
+            text-align: center;
+        }
+
+        a {
+            color: white; 
+            text-decoration: none; 
+            text-align: center;
+        }
+        a:hover {
+            text-decoration: underline; 
+        }
+
+         /* Adaptation à tous les écrans */
+       @media screen and (max-width: 1000px) {
+           .content-split {
+               flex-direction: column;
+           }
+            .division-1 {
+               flex-direction:initial;
+           }
+       }
+       
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#division-1"> Accueil </a></li>
+                <li><a href="#division-3"> Mon Parcours </a></li>
+                <li><a href="#division-4"> Qui ? </a></li>
+                <li><a href="#division-5"> Pourquoi ? </a></li>
+                <li><a href="#division-6"> Mes Formations </a></li>
+                <li><a href="#division-7"> Mes Services </a></li>
+                <li><a href="#division-8"> Tarifications </a></li>
+                <li><a href="#division-9"> Contact </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="division-1" class="Accueil">
+    <div class="division-1">
+        <img src="logo.jpg" alt="L'Atelier Social">
+        <h1> Bienvenue à l'Atelier Social ! </h1>
+    </div>
+
+    <!-- Deuxième division avec une grande image à droite et une petite image avec description -->
+    <div class="division-2">
+        <div class="text-content">
+            <h2> Osez le changement et faites appel à une assistante sociale indépendante ! </h2>
+            <h3> Bonjour à toutes et à tous. </h3>
+            <p> Je suis Charlotte, assistante de service social spécialisée dans l’accompagnement des adultes en situation de handicap diplômée d'État depuis 2022.</p>
+            <p> Ici, je m’adresse aux particuliers mais aussi aux entreprises, structures médico-sociales et collectivités. </p>
+            <p> A l’Atelier Social, vous trouverez un cadre bienveillant, sécurisé et encadré par des valeurs d’accueil inconditionnel, de respect, d'écoute et de non jugement.
+                Mes missions ont pour objectifs de favoriser vos chances de réussite et vous accompagner du début à la fin de votre parcours. Je veux vous offrir la possibilité de voir au-delà des freins et mettre en valeur vos atouts.</p>
+            <p> Ayant exercé pendant quelques années au sein de structures accompagnant du public en situation de handicap, j’ai acquis un savoir-faire dans ce domaine.
+                 </p>
+        </div>
+        <img src="Charlotte.jpg" alt="Charlotte, assisante social" class="big-img">
+    </div>
+    </section> 
+
+    <!-- Troisième division avec galerie d'images -->
+    <section id="division-3" class="Mon Parcours">
+    <div class="division-3">
+        <div class="text-content">
+            <h2> Mon Parcours </h2>
+            <p> En 2022, après l’obtention de mon diplôme, je décide de débuter ma carrière dans le domaine du handicap. Cette première expérience en tant qu’assistante de service social me permet de développer mes connaissances et de gagner en compétences. Grâce à l’équipe qui m’entoure et au public bienveillant, j’apprends énormément et je gagne en autonomie. 
+                Je m’enrichis de cette première expérience professionnelle pour évoluer et décide en 2024 de partir à la recherche d’une nouvelle aventure. 
+            </p>
+            <p> En 2024, je rejoins une association spécialisée dans l’accompagnement des enfants et adultes à domicile. 
+            </p>
+            <p> Je suis quotidiennement entourée par des professionnels de milieux différents et apprends beaucoup sur leurs pratiques. Je découvre un nouveau public : les enfants. 
+            </p>
+            <p> 
+                Malheureusement cette expérience ne sera pas concluante mais elle me donne le courage de me lancer en libéral pour exercer ma profession en tant que personne et professionnelle libre. 
+            </p>
+        </div>
+    </div>
+    </section> 
+
+    <!-- Quatrième division avec galerie d'images -->
+    <section id="division-4" class=" Qui ? ">
+    <div class="division-4">
+        <div class="text-content">
+            <h2> Pourquoi faire appel à une assistante sociale libérale ? </h2>
+            <div class="content-split">
+                <div class="box1">
+                    <h3> Public  </h3>
+                    <p> Faire appel à une assistante sociale libérale c’est choisir une approche personnalisée et flexible pour répondre et résoudre des problématiques financières, administratives, sociales et professionnelles tout en gardant les valeurs de discrétion, de confidentialité et de respect du secret professionnel.
+                    </p>
+                </div>
+                <div class="box1">
+                    <h3> Entreprises, Collectivités, Associations </h3>
+                    <p> En intégrant les services d’une assistante sociale libérale, vous profiterez de nombreux avantages : flexibilité, intervention ciblée et interventions ponctuelles ou régulières en fonction de vos besoins. Cette opportunité vous permet également de renforcer l’engagement de votre entreprise en matière de Responsabilité Sociétale des Entreprises (RSE) en démontrant votre engagement dans le bien-être et l’épanouissement de vos salariés.
+                        En tant que professionnelle formée à l’écoute et à la résolution de conflits, je peux intervenir pour résoudre les conflits internes, favoriser le dialogue et restaurer une bonne ambiance de travail.
+                        In fine, choisir une assistante sociale libérale c’est investir dans le capital humain de votre entreprise en offrant à vos collaborateurs un soutien précieux tout en renforçant la cohésion et la performance de votre équipe.                
+                    </p>
+                </div>
+            </div>
+        </div>        
+    </div>
+    </section> 
+
+    <!-- Cinquième division avec galerie d'images -->
+    <section id="division-5" class=" Pourquoi ? ">
+    <div class="division-5">
+        <div class="text-content">
+            <h2> Pourquoi me choisir ? </h2>
+            <div class="content-split">
+                <div class="box">
+                    <h3> Écoute bienveillante et active </h3>
+                    <p> Mon approche repose sur l'écoute active et la bienveillance, pour vous accompagner dans un cadre de confiance.
+                    </p>
+                </div>
+                <div class="box">
+                    <h3> Accompagnement personnalisé </h3>
+                    <p> Chaque situation est unique. Ensemble, nous construirons des solutions adaptées à vos besoins. </p>
+                </div>
+                <div class="box">
+                    <h3> Confidentialité garantie </h3>
+                    <p> Votre vie privée est précieuse. Je m'engage à respecter strictement la confidentialité de tous nos échanges.
+                        Cependant, en tant qu’assistante de service social, je suis dans l’obligation d’alerter en cas de danger pour vous-même ou pour les autres. Cela fait partie d’une de mes missions principales : vous protéger.
+                        </p>
+                </div>
+                <div class="box">
+                    <h3> Flexibilité </h3>
+                    <p> Je propose des consultations en présentiel à domicile, ainsi que des consultations à distance (téléphone, visioconférence) en semaine et en week-end.
+                        Pour vous qui souhaitez faire appel à moi, je le sais, les horaires de travail ne sont pas toujours compatibles avec les horaires des institutions.
+                        Avec moi, vous avez la possibilité d'organiser vos rendez-vous pendant les week-ends. Plus de stress ! 
+                        </p>
+                </div>
+                <div class="box">
+                    <h3> Autodétermination </h3>
+                    <p> Vous êtes le seul acteur de votre vie. Votre accompagnement reposera sur vos attentes, vos besoins, vos forces mais aussi vos faiblesses. Mon rôle est de vous accompagner, de vous orienter, de vous soutenir et in fine de vous amener vers l’autonomie.  </p>
+                </div>
+            </div>
+        </div>    
+    </div>
+    </section> 
+
+    <!-- Sixième division -->
+    <section id="division-6" class=" Mes Formations ">
+        <div class="division-6">
+            <div class="content-split">
+                <div class="text-content">
+                    <h2>  Mes Formations </h2>
+                    <h3> DEASS </h3>
+                    <p> Originaire de la région Centre, j'ai étudié à l’école régionale du travail social à Orléans. Ce cursus étudiant a été rythmé par des apprentissages riches, des découvertes, des rencontres mais surtout, Il a été marqué par ma motivation sans relâche et ma conviction de faire de ce métier, MON métier. 
+                    </p>
+                    <p> J’ai eu l’opportunité d’appréhender au cours de différents stages de pratiques professionnelles au sein de divers établissements:
+                    </p>
+                    <p>  La Maison du département (accompagnement des publics précaires, populations étrangères, difficultés financières, femmes victimes de violences etc..)
+                    </p>
+                    <p> Une Association d’aide aux personnes sans-abris dans la belle ville de Québec au Canada (Personnes sans-abris, populations isolées, en situation de précarité..)
+                    </p>
+                    <p> Le CCAS au plus près des habitants d’une commune de la région Centre (réalisation d’un diagnostic de territoire, contact direct avec les habitants de la commune, les élus et partenaires du territoire).
+                    </p>
+                    <p> Des établissements scolaires en zone urbaine et prioritaire au contact direct des plus jeunes, scolarisés entre 10 et 18 ans.
+                    </p>
+                    <p> Ces opportunités m’ont permis de mettre à profit mes connaissances, d’observer la réalité du terrain mais surtout de mettre des mots, des images et du sens à cette réalité que j'avais tant imaginée.
+                    </p>
+                    <h3> CAFERIUS </h3>
+                    <p> En Mars 2024, je décide de reprendre mes études. Je me lance dans une nouvelle aventure, celle de la formation CAFERIUS (Certificat d’Aptitude aux Fonctions d’Encadrement et de Responsable d'Unité d’Intervention Sociale.)
+                    </p>
+                    <p> Après trois ans d'études et deux ans de pratique professionnelle, j’aspire à m’engager dans des fonctions d’encadrement et à responsabilité. 
+                    </p>
+                    <p> Ma motivation est réelle et grande. Je veux moderniser le management, faire évoluer nos pratiques à nous professionnels du travail social mais surtout apporter un réel soutien aux équipes car un professionnel en bonne santé c'est un professionnel qui ne manque de rien et qui est en capacité de VOUS proposer un accompagnement qualitatif.
+                    </p>
+                    <p> Et pour cela, je veux être au plus proche de nos dirigeants. 
+                    </p>
+                </div>
+            </div>    
+        </div>
+    </section> 
+
+     <!-- Septième division -->
+     <section id="division-7" class=" Mes Services ">
+        <div class="division-7">
+            <div class="text-content">
+                <h2> Mes Services </h2>
+                <p> En tant qu'assistante sociale libérale, je propose une large gamme de services pour vous accompagner dans vos démarches sociales et administratives, ainsi que dans la résolution de vos difficultés personnelles et/ou professionnelles :
+                </p>
+                <h3> Publics : </h3>
+                <li> Accompagnement social personnalisé : Évaluation de votre situation globale, mise en place d'un plan d'action individualisé, suivi régulier. </li>
+                <li> Aide aux démarches administratives : Assistance pour remplir et suivre vos dossiers (allocations, aides au logement, prestations familiales, MPDH etc.). </li>
+                <li> Soutien dans les moments difficiles : Écoute et soutien administratif et psychologique face aux situations de crise (décès, maladie, séparation, accident de la vie etc.).
+                </li>
+                <li> Conseil et orientation : Information sur vos droits, orientation vers les structures et services adaptés à votre situation.
+                </li>
+                <li> Rédaction de vos lettres, courriers à destination des organismes de santé, institutions.
+                </li>
+                <li> Accompagnement vers l’emploi adapté ou ordinaire : Mise en relation avec les employeurs, entreprises, ESAT, Cap Emploi etc
+                </li>
+                <li> Accompagnement vers le logement et/ou l’hébergement : Demande de logement social, aide à la recherche de biens, lien avec les bailleurs etc
+                </li>
+                <li> Aide et soutien dans votre parcours handicap et/ou de perte d’autonomie : Orientation vers les structures médico-sociales adaptées à vos besoins et votre perte d’autonomie (MAS, FAS, FAM, EHPAD…) et les professionnels compétents : ergothérapeutes, kinésithérapeutes, infirmiers libéraux etc. Mise en place des aides au quotidien : auxiliaires de vie et revendeurs de matériel médical pour adapter votre logement si besoin. </li>
+                <h3> Professionnels : </h3>
+                <li> Entretiens psycho-sociaux avec vos collaborateurs 
+                </li>
+                <li> Ecoute et soutien dans les situations difficiles liées à l’emploi 
+                </li>
+                <li> Sensibilisation pour le bien-être au travail, les risques psycho-sociaux, l’égalité homme-femme, le harcélement au travail etc..
+                </li>
+                <li> Accompagnement des salariés en situation de handicap dans leur parcours professionnel
+                </li>
+            </div>  
+        </div>
+    </section> 
+
+    <!-- Huitième division : Tableau des Tarifs -->
+    <section id="division-8" class=" Tarifications ">
+        <div class="division-8">
+            <div class="text-content">
+                <h2> Tarifications </h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Services </th>
+                            <th> Tarifs </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> Rendez-vous en présentiel </td>
+                            <td> Tarif de base : 30 euros de l'heure. Tarif libre selon évaluation de votre situation. </td>
+                        </tr>
+                        <tr>
+                            <td> Rendez-vous en ligne ou télephonique </td>
+                            <td> Paiement en avance préférable. </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3> Pourquoi faire le choix du tarif libre ? </h3>
+                <p> Le choix du tarif libre s’est imposé comme une évidence. En tant qu’assistante de service social, j’ai conscience que les ressources financières peuvent représenter un frein. 
+                    Pour pouvoir exercer sereinement et vous proposer des accompagnements de qualité, un tarif minimum est demandé. Au-delà de celui-ci et comme tout au long de votre accompagnement, vous avez le choix.
+                </p>
+            </div>  
+        </div>
+    </section> 
+
+    <!-- Neuvième division : Formulaire de contact -->
+    <section id="division-9" class=" Contact ">
+        <div class="division-9">
+            <h2>Contactez-nous</h2>
+            <form method="post" action="traitement.php">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required><br>
+                <label for="email">Email : </label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" required></textarea><br>
+                <button type="submit">Envoyer</button>
+            </form>
+    </section> 
+    <footer>
+        <p> <a href="https://www.linkedin.com/in/charlotte-leconte-346818187?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></p>
+    </footer>
+</body>
+</html>

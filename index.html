@@ -453,10 +453,13 @@
         /* Neuvième Division : Formulaire de contact*/
         .division-9 {
             display: flex;
+            flex-direction: column;
             background-image: url('fondrdv.jpg');
             background-position: center;
             background-size: cover;
             height: 100%;
+            justify-content: center;
+            align-items: center;
         }
 
         .division-9 h2 {
@@ -465,6 +468,7 @@
             font-size: 30px;
             color: #013328;
             margin-top: 20px;
+            margin-bottom: 10px;
         } 
 
         .division-9 p {
@@ -473,14 +477,15 @@
             color: #013328;
             text-align: center;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
         
         .box2 {    
            display: block;
            text-align: center;
            background-color: #013328;
-           padding: 10px 10px;
-           fond-size: 20px;
+           padding: 10px 20px;
+           font-size: 20px;
            margin: 4px 2px;
            border-radius: 10px;
            transition: transform 0.3s ease, box-shadow 0.3s ease;

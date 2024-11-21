@@ -507,13 +507,43 @@
             text-decoration: underline; 
         }
 
-         /* Adaptation à tous les écrans */
-       @media screen and (max-width: 1000px) {
-           .content-split {
-               flex-direction: column;
-           }
+         /* Pour les écrans de taille plus grande */
+        @media screen and (max-width: 1200px) {
+            footer {
+                padding: 15px;
+            }
+         }
+
+        /* Pour les écrans moyens (tablettes et petits ordinateurs) */
+        @media screen and (max-width: 1000px) {
+            footer {
+                padding: 10px;  /* Un peu moins de padding pour les petites tailles */
+            }
+
+            .content-split {
+                flex-direction: column;  /* Passage en colonne pour les petits écrans */
+            }
+
+            a {
+                font-size: 14px;  /* Réduction de la taille des liens sur petits écrans */
+            }
         }
-       
+
+        /* Pour les petits écrans (mobiles) */
+        @media screen and (max-width: 600px) {
+            footer {
+                padding: 10px 5px; /* Réduction du padding sur les très petits écrans */
+            }
+
+            .content-split {
+                flex-direction: column;  /* Assurer une colonne même sur les très petits écrans */
+            }
+
+            a {
+                font-size: 12px;  /* Réduction de la taille des liens encore plus pour les mobiles */
+            }
+        }
+ 
     </style>
 </head>
 <body>
